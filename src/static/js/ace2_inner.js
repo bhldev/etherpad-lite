@@ -5364,7 +5364,10 @@ function Ace2Inner(){
         t = listType[1];
         level = Number(listType[2]);
       }
-      var t = getLineListType(n);
+
+      // if already indented, then add a level of indentation to the list
+      if (!allLinesAreList && t) { level = level + 1; }
+
       mods.push([n, allLinesAreList ? 'indent' + level : (t ? type + level : type + '1')]);
     }
 

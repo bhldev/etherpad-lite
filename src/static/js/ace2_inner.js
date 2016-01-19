@@ -5367,9 +5367,9 @@ function Ace2Inner(){
       var t = getLineListType(n);
 
       // if already a list, deindent
-      if (allLinesAreList && level != 1) { alert('inside fix1:' + t + ' ' + allLinesAreList + ' ' + level); level = level - 1;  }
+      if (allLinesAreList && level != 1) { level = level - 1;  }
       // if already indented, then add a level of indentation to the list
-      else if (t && !allLinesAreList) { alert('inside fix2:' + t + ' ' + allLinesAreList); level = level + 1; }
+      else if (t && !allLinesAreList) { level = level + 1; }
 
       mods.push([n, allLinesAreList ? 'indent' + level : (t ? type + level : type + '1')]);
     }
